@@ -1,5 +1,5 @@
-# Bus Travel Timnes
-** Gary McHugh
+# Bus Travel Times
+**GaryMcHugh**
 
 ##introduction
 Welcome to my new API
