@@ -94,3 +94,27 @@ An example of a response would be:
 [ {"Longitude": "-9.050422", 
    "Latitude": "53.272437"}]
 ```
+
+## Car Park Type
+This function is designed to return all car parks of the type inputted, This allows users to choose the type of car park they want to use.
+You can get a list of names of the car parks of a given type by using the GET method at the following URL:
+*http://galwaycarparks.ie/carpark/[type]*
+Where you replace [type] with the type of the car park you want (multistorey or pay/surface).
+
+For example, the URL:
+*http://galwaycarparks.ie/carpark/multistorey*
+This will return a list of car park names of type Multistorey.
+The data will be returned in JSON format, with the following properties:
+
+| Field         | Description                                                 |
+| ------------- |:-----------------------------------------------------------:|
+| Name          | The place name of the car park                              |
+| Type          | What kind of car park it is                                 |
+
+An example of a response would be:
+```JSON
+[ {"Name": "Eyre Square Centre", 
+   "Type": "Multistorey Carpark",
+   "Name": "Jurys Hotel", 
+   "Type": "Multistorey Carpark"}]
+```
