@@ -45,7 +45,7 @@ The data will be returned in JSON format, with the following properties:
 
 An example of a response would be:
 ```JSON
-[ {"Name": Eyre Sqaure Center, 
+[ {"Name": Eyre_Sqaure_Center, 
    "Type": "Multistorey Carpark",
    "No_Spaces": "452"}]
 ```
