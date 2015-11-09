@@ -92,6 +92,5 @@ The data will be returned in JSON format, with the following properties:
 An example of a response would be:
 ```JSON
 [ {"Longitude": "-9.050422", 
-   "Latitude": "53.272437",
-   "No_Spaces": "452"}]
+   "Latitude": "53.272437"}]
 ```
