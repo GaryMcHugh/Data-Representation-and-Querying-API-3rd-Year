@@ -118,3 +118,20 @@ An example of a response would be:
    "Name": "Jurys Hotel", 
    "Type": "Multistorey Carpark"}]
 ```
+
+## Adding a new car park
+As Galway becomes larger more car parks will be required, or we may want to add car parks that surround Galway city. For this reason we need to be able to add more car parks to the dataset.
+A new car park can be added at the following url:
+*http://galwaycarparks.ie/newcarpark*
+
+This is an example of the message body that could be sent by the HTTP POST method fot this data set.
+Note that the name/value pairs is sent in the HTTP message body of a POST request:
+
+```HTTP
+   POST /galwaycarpark/newcarpark HTTP/1.1
+   User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+   Host: galwaycarparks.com
+   x="-9.0765"&y="53.2567"&objectid="18"&name="NewCarPark"&type="Multistorey"&no_space="555"&lat="53.225"&long="-9.087"&eastitm="529751.2"&northitm="725655.8"&eastig="129752.3"&northig="224866.5"
+```
+
+We use the POST method when we have data that we do not want everyone to see. The POST method offers a more secure way of adding data to our dataset like adding a new car park. If we were to use the GET method everyone could see the data that we are sending as it would be inside the url. The post method is useful when we want to send sensitive data that we do not want everyone to see, like passwords or log in details.
