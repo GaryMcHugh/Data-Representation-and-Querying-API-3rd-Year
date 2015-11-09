@@ -19,8 +19,8 @@ There are twelve values on each line, which are as follows:
 | Name          | The place name of the car park                              |
 | Type          | What kind of car park it is                                 |
 | No_Spaces     | The number of spaces in the car park                        |
-| Latitude      | Determines location of Car Park                             |
 | Longitude     | Determines location of Car Park                             |
+| Latitude      | Determines location of Car Park                             |
 | East ITM      | Location using Irish Transverse Mercator coordinate system  |
 | North ITM     | Location using Irish Transverse Mercator coordinate system  |
 | East IG       | Location using Irish Grid Reference System                  |
@@ -47,5 +47,27 @@ An example of a response would be:
 ```JSON
 [ {"Name": "Eyre Sqaure Center", 
    "Type": "Multistorey Carpark",
+   "No_Spaces": "452"}]
+```
+
+## Longitude and Latitude
+This function is designed to return the Longitude and Latitude of the car park so the user can input the result into a sat nav.
+You can get the Longitude and Latitude of a car park using the GET method at the following URL:
+*http://galwaycarparks.ie/satnav/[name]*
+where you replace [name] with the name of the car park. Where there is a space in the name an underscore (_) should replace it.
+For example, the URL:
+*http://galwaycarparks.ie/satnav/Eyre_Square_Centre*
+will return the Longitude and Latitude of the Eyre Square Center car park.
+The data will be returned in JSON format, with the following properties:
+
+| Field         | Description                                                 |
+| ------------- |:-----------------------------------------------------------:|
+| Longitude     | Determines location of Car Park                             |
+| Latitude      | Determines location of Car Park                             |
+
+An example of a response would be:
+```JSON
+[ {"Longitude": "-9.050422", 
+   "Latitude": "53.272437",
    "No_Spaces": "452"}]
 ```
