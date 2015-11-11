@@ -173,12 +173,19 @@ For example, the URL:
 *http://galwaycarparks.ie/update/2/No_Spaces402*
 Will update the Jurys Hotel car parks number of spaces from 348 to 402.
 
-This is an example of the message body that could be sent by the HTTP PUT method for this data set.
+
+This is an example of the http request that could be used:
 
 ```HTTP
    PUT /galwaycarpark/update/2/No_Spaces402 HTTP/1.1
    User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
    Host: galwaycarparks.ie
-   "Update was successful"
 ```
 
+This is an example of the message body that could be sent back the HTTP PUT method for this data set.
+
+```HTTP
+HTTP/1.1 200 OK
+Server: Server_Name
+"Update was successful"
+```
