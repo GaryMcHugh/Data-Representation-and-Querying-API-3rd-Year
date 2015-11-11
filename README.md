@@ -13,32 +13,34 @@ This dataset was received in Comma Separated Values (CSV) format, and was downlo
 The CSV file contains 18 rows, the first being a header row with the names of each field.
 There are twelve values on each line, which are as follows:
 
-| Field         | Description                                                 |
-| ------------- |:-----------------------------------------------------------:|
-| X Coordinate  | Identifies the exact easterly location                      |
-| Y Coordinate  | Identifies the exact northerly location                     |
-| Object ID     | Unique identifier for each row                              |
-| Name          | The place name of the car park                              |
-| Type          | What kind of car park it is                                 |
-| No_Spaces     | The number of spaces in the car park                        |
-| Longitude     | Determines location of Car Park                             |
-| Latitude      | Determines location of Car Park                             |
-| East ITM      | Location using Irish Transverse Mercator coordinate system  |
-| North ITM     | Location using Irish Transverse Mercator coordinate system  |
-| East IG       | Location using Irish Grid Reference System                  |
-| North IG      | Location using Irish Grid Reference System                  |
+| Field         | Description                                                 | Sample Data   |
+| ------------- |:-----------------------------------------------------------:|:-------------:|
+| X Coordinate  | Identifies the exact easterly location                      | -9.0535       |
+| Y Coordinate  | Identifies the exact northerly location                     | 53.27308      |
+| Object ID     | Unique identifier for each row                              | 1             |
+| Name          | The place name of the car park                              | Market St     |
+| Type          | What kind of car park it is                                 | Pay/Surface   |
+| No_Spaces     | The number of spaces in the car park                        | 88            |
+| Longitude     | Determines location of Car Park                             | 53.273        |
+| Latitude      | Determines location of Car Park                             | -9.054        |
+| East ITM      | Location using Irish Transverse Mercator coordinate system  | 529691.9      |
+| North ITM     | Location using Irish Transverse Mercator coordinate system  | 725294.8      |
+| East IG       | Location using Irish Grid Reference System                  | 129726.01     |
+| North IG      | Location using Irish Grid Reference System                  | 225265.6      |
 
-Note: The X and Y Coordinate system are out dated and we would suggest that you use one of the other more up to date location systems that are available in this API such as :Lat and Long, ITM or IG.
+Note: The X and Y Coordinate system are a precise version of Longitude and Latitude.
 
 ## List of car parks
-Note: This function allows the user to get all the names of the Galway city car parks so they can be used in the other GET methods. This may be particularly useful to tourists who do not know the name of the car parks.
+Note: This function allows the user to get all the names of the Galway city car parks so they can be used in the other GET methods below. This may be particularly useful to tourists who do not know the name of the car parks.
+
 You can get a list of all car park names in Galway city using the GET method at the following URL:
 *http://galwaycarparks.ie/names*
 This is a static url, no fields of the url should to be changed.
 
 For example, the URL:
 *http://galwaycarparks.ie/names*
-This will return all names of the car parks in Galway city.
+Will return all names of the car parks in Galway city.
+
 The data will be returned in JSON format, with the following property:
 
 | Field         | Description                                                 |
@@ -55,10 +57,13 @@ An example of a response would be:
 ## Details of a car park
 You can get the details of a car park in Galway with the name, the type and the number of spaces it contains using the GET method at the following URL:
 *http://galwaycarparks.ie/carpark/[name]*
+
 Where you replace [name] with the name of the car park. Where there is a space in the name an underscore (_) should replace it.
+
 For example, the URL:
 *http://galwaycarparks.ie/carpark/Eyre_Square_Centre*
 Will return the general details of the Eyre Square Centre car park.
+
 The data will be returned in JSON format, with the following properties:
 
 | Field         | Description                                                 |
@@ -79,9 +84,11 @@ This function is designed to return the Longitude and Latitude of the car park s
 You can get the Longitude and Latitude of a car park using the GET method at the following URL:
 *http://galwaycarparks.ie/satnav/[name]*
 Where you replace [name] with the name of the car park. Where there is a space in the name an underscore (_) should replace it.
+
 For example, the URL:
 *http://galwaycarparks.ie/satnav/Eyre_Square_Centre*
 Will return the Longitude and Latitude of the Eyre Square Centre car park.
+
 The data will be returned in JSON format, with the following properties:
 
 | Field         | Description                                                 |
@@ -97,13 +104,14 @@ An example of a response would be:
 
 ## Car Park Type
 This function is designed to return all car parks of the type inputted, This allows users to choose the type of car park they want to use.
-You can get a list of names of the car parks of a given type by using the GET method at the following URL:
+You can get a list of names of the car parks of the type chosen by using the GET method at the following URL:
 *http://galwaycarparks.ie/carpark/[type]*
 Where you replace [type] with the type of the car park you want (multistorey or pay/surface).
 
 For example, the URL:
 *http://galwaycarparks.ie/carpark/multistorey*
 Will return a list of car park names of type Multistorey.
+
 The data will be returned in JSON format, with the following properties:
 
 | Field         | Description                                                 |
@@ -125,8 +133,8 @@ As Galway becomes larger more car parks will be required, or we may want to add 
 You can add a car park to the list of car parks in Galway city using the POST method at the following URL:
 *http://galwaycarparks.ie/newcarpark*
 
-This is an example of the message body that could be sent by the HTTP POST method for this data set.
-Note that the name/value pairs is sent in the HTTP message body of a POST request:
+This is an example of the message body that could be sent using the HTTP POST method to add data to this data set.
+Note that the name/value pairs is sent in the HTTP POST request:
 
 ```HTTP
    POST /galwaycarpark/newcarpark HTTP/1.1
@@ -151,7 +159,7 @@ For example, the URL:
 *http://galwaycarparks.ie/delete/ObjectID=2*
 Will delete the car park with the Object ID of 2.
 
-This is an example of what the response you can expect from the DELETE method:
+This is an example of the response you can expect from the DELETE method:
 
 ```HTTP
    HTTP/1.1 200 OK
