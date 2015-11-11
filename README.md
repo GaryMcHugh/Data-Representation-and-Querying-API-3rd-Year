@@ -103,7 +103,7 @@ Where you replace [type] with the type of the car park you want (multistorey or 
 
 For example, the URL:
 *http://galwaycarparks.ie/carpark/multistorey*
-This will return a list of car park names of type Multistorey.
+Will return a list of car park names of type Multistorey.
 The data will be returned in JSON format, with the following properties:
 
 | Field         | Description                                                 |
@@ -135,3 +135,25 @@ Note that the name/value pairs is sent in the HTTP message body of a POST reques
 ```
 
 We use the POST method when we have data that we do not want everyone to see. The POST method offers a more secure way of adding data to our dataset like adding a new car park. If we were to use the GET method everyone could see the data that we are sending as it would be inside the url. The post method is useful when we want to send sensitive data that we do not want everyone to see, like passwords or log in details.
+
+## Deleting an existing car park
+It is possible that a car park may need to be deleted from the dataset. This might be due to the car park closing and being replaced with a new building or if a mistake was made when adding the car park to the dataset.
+
+The car park can be deleted from the dataset using the Object ID in the url.
+
+A car park can be deleted at the following url:
+*http://galwaycarparks.ie/delete/[ObjectID=?]*
+
+Where you replace the question mark(?) with the ObjectID of the car park you want to delete.(see example below)
+
+For example, the URL:
+*http://galwaycarparks.ie/delete/ObjectID=2*
+Will delete the car park with the Object ID of 2.
+The data will be returned in JSON format, with the following properties:
+
+This is an example of what the response you can expect from the DELETE method:
+
+```HTTP
+   HTTP/1.1 200 OK
+   "Deletion was successful"
+```
