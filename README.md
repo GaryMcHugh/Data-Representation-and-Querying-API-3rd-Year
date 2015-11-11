@@ -35,7 +35,7 @@ Note: This function allows the user to get all the names of the Galway city car 
 
 You can get a list of all car park names in Galway city using the GET method at the following URL:
 *http://galwaycarparks.ie/names*
-This is a static url, no fields of the url should to be changed.
+This is a static URL, no fields of the URL should to be changed.
 
 For example, the URL:
 *http://galwaycarparks.ie/names*
@@ -103,7 +103,7 @@ An example of a response would be:
 ```
 
 ## Car Park Type
-This function is designed to return all car parks of the type inputted, This allows users to choose the type of car park they want to use.
+This function is designed to return all car parks of the type inputted, this allows users to choose the type of car park they want to use.
 You can get a list of names of the car parks of the type chosen by using the GET method at the following URL:
 *http://galwaycarparks.ie/carpark/[type]*
 Where you replace [type] with the type of the car park you want (multistorey or pay/surface).
@@ -143,17 +143,17 @@ Note that the name/value pairs is sent in the HTTP POST request:
    x="-9.0765"&y="53.2567"&objectid="18"&name="NewCarPark"&type="Multistorey"&no_space="555"&lat="53.225"&long="-9.087"&eastitm="529751.2"&northitm="725655.8"&eastig="129752.3"&northig="224866.5"
 ```
 
-We use the POST method when we have data that we do not want everyone to see. The POST method offers a more secure way of adding data to our dataset like adding a new car park. If we were to use the GET method everyone could see the data that we are sending as it would be inside the url. The post method is useful when we want to send sensitive data that we do not want everyone to see, like passwords or log in details.
+We use the POST method when we have data that we do not want everyone to see. The POST method offers a more secure way of adding data to our dataset like adding a new car park. If we were to use the GET method everyone could see the data that we are sending as it would be inside the URL. The post method is useful when we want to send sensitive data that we do not want everyone to see, like passwords or log in details.
 
 ## Deleting an existing car park
 It is possible that a car park may need to be deleted from the dataset. This might be due to the car park closing and being replaced with a new building or if a mistake was made when adding the car park to the dataset.
 
-The car park can be deleted from the dataset using the Object ID in the url.
+The car park can be deleted from the dataset using the Object ID in the URL.
 
 You can delete a car park from the list of car parks in Galway city using the DELETE method at the following URL:
 *http://galwaycarparks.ie/delete/[ObjectID=?]*
 
-Where you replace the question mark(?) with the ObjectID of the car park you want to delete.(see example below)
+Where you replace the question mark (?) with the ObjectID of the car park you want to delete. (See example below)
 
 For example, the URL:
 *http://galwaycarparks.ie/delete/ObjectID=2*
@@ -167,7 +167,7 @@ This is an example of the response you can expect from the DELETE method:
 ```
 
 ## Updating a car park
-As Galway city grows they may need to add more car parking spaces to a car park. This could be achieved by adding a new floor to a multistorey car park or by a surface car park aquiring more space. For this reason we need to be able to update car parks
+As Galway city grows they may need to add more car parking spaces to a car park. This could be achieved by adding a new floor to a multistorey car park or by a surface car park acquiring more space. For this reason we need to be able to update car parks
 
 You can update a car park from the list of car parks in Galway city using the PUT method at the following URL:
 *http://galwaycarparks.ie/update/[ObjectID]/[variable[?]]*
