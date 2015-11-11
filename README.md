@@ -121,16 +121,17 @@ An example of a response would be:
 
 ## Adding a new car park
 As Galway becomes larger more car parks will be required, or we may want to add car parks that surround Galway city. For this reason we need to be able to add more car parks to the dataset.
-A new car park can be added at the following url:
+
+You can add a car park to the list of car parks in Galway city using the POST method at the following URL:
 *http://galwaycarparks.ie/newcarpark*
 
-This is an example of the message body that could be sent by the HTTP POST method fot this data set.
+This is an example of the message body that could be sent by the HTTP POST method for this data set.
 Note that the name/value pairs is sent in the HTTP message body of a POST request:
 
 ```HTTP
    POST /galwaycarpark/newcarpark HTTP/1.1
    User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
-   Host: galwaycarparks.com
+   Host: galwaycarparks.ie
    x="-9.0765"&y="53.2567"&objectid="18"&name="NewCarPark"&type="Multistorey"&no_space="555"&lat="53.225"&long="-9.087"&eastitm="529751.2"&northitm="725655.8"&eastig="129752.3"&northig="224866.5"
 ```
 
@@ -141,7 +142,7 @@ It is possible that a car park may need to be deleted from the dataset. This mig
 
 The car park can be deleted from the dataset using the Object ID in the url.
 
-A car park can be deleted at the following url:
+You can delete a car park from the list of car parks in Galway city using the DELETE method at the following URL:
 *http://galwaycarparks.ie/delete/[ObjectID=?]*
 
 Where you replace the question mark(?) with the ObjectID of the car park you want to delete.(see example below)
@@ -149,7 +150,6 @@ Where you replace the question mark(?) with the ObjectID of the car park you wan
 For example, the URL:
 *http://galwaycarparks.ie/delete/ObjectID=2*
 Will delete the car park with the Object ID of 2.
-The data will be returned in JSON format, with the following properties:
 
 This is an example of what the response you can expect from the DELETE method:
 
@@ -157,3 +157,28 @@ This is an example of what the response you can expect from the DELETE method:
    HTTP/1.1 200 OK
    "Deletion was successful"
 ```
+
+## Updating a car park
+As Galway city grows they may need to add more car parking spaces to a car park. This could be achieved by adding a new floor to a multistorey car park or by a surface car park aquiring more space. For this reason we need to be able to update car parks
+
+You can update a car park from the list of car parks in Galway city using the PUT method at the following URL:
+*http://galwaycarparks.ie/update/[ObjectID]/[variable[?]]*
+
+Where you replace:
+1. The [ObjectID] with the object ID of the car park you want to update.
+2. The [variable] with the name of the variable you want to update. 
+3. The [?] with the new value of that variable.
+
+For example, the URL:
+*http://galwaycarparks.ie/update/2/No_Spaces402*
+Will update the Jurys Hotel car parks number of spaces from 348 to 402.
+
+This is an example of the message body that could be sent by the HTTP PUT method for this data set.
+
+```HTTP
+   PUT /galwaycarpark/update/2/No_Spaces402 HTTP/1.1
+   User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+   Host: galwaycarparks.ie
+   "Update was successful"
+```
+
