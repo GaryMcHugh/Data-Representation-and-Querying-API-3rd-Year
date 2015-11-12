@@ -35,6 +35,7 @@ Note: This function allows the user to get all the names of the Galway city car 
 
 You can get a list of all car park names in Galway city using the GET method at the following URL:
 *http://galwaycarparks.ie/names*
+
 This is a static URL, no fields of the URL should to be changed.
 
 For example, the URL:
