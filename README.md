@@ -178,8 +178,11 @@ You can update a car park from the list of car parks in Galway city using the PU
 *http://galwaycarparks.ie/update/[ObjectID]/[variable[?]]*
 
 Where you replace:
+
 1. The [ObjectID] with the object ID of the car park you want to update.
+
 2. The [variable] with the name of the variable you want to update. 
+
 3. The [?] with the new value of that variable.
 
 For example, the URL:
