@@ -84,6 +84,7 @@ An example of a response would be:
 This function is designed to return the Longitude and Latitude of the car park so the user can input the result into a sat nav.
 You can get the Longitude and Latitude of a car park using the GET method at the following URL:
 *http://galwaycarparks.ie/satnav/[name]*
+
 Where you replace [name] with the name of the car park. Where there is a space in the name an underscore (_) should replace it.
 
 For example, the URL:
@@ -107,10 +108,12 @@ An example of a response would be:
 This function is designed to return all car parks of the type inputted, this allows users to choose the type of car park they want to use.
 You can get a list of names of the car parks of the type chosen by using the GET method at the following URL:
 *http://galwaycarparks.ie/carpark/[type]*
+
 Where you replace [type] with the type of the car park you want (multistorey or pay/surface).
 
 For example, the URL:
 *http://galwaycarparks.ie/carpark/multistorey*
+
 Will return a list of car park names of type Multistorey.
 
 The data will be returned in JSON format, with the following properties:
@@ -158,6 +161,7 @@ Where you replace the question mark (?) with the ObjectID of the car park you wa
 
 For example, the URL:
 *http://galwaycarparks.ie/delete/ObjectID=2*
+
 Will delete the car park with the Object ID of 2.
 
 This is an example of the response you can expect from the DELETE method:
@@ -180,6 +184,7 @@ Where you replace:
 
 For example, the URL:
 *http://galwaycarparks.ie/update/2/No_Spaces402*
+
 Will update the Jurys Hotel car parks number of spaces from 348 to 402.
 
 
