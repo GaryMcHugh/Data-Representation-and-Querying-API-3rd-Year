@@ -40,6 +40,7 @@ This is a static URL, no fields of the URL should to be changed.
 
 For example, the URL:
 *http://galwaycarparks.ie/names*
+
 Will return all names of the car parks in Galway city.
 
 The data will be returned in JSON format, with the following property:
@@ -63,6 +64,7 @@ Where you replace [name] with the name of the car park. Where there is a space i
 
 For example, the URL:
 *http://galwaycarparks.ie/carpark/Eyre_Square_Centre*
+
 Will return the general details of the Eyre Square Centre car park.
 
 The data will be returned in JSON format, with the following properties:
@@ -89,6 +91,7 @@ Where you replace [name] with the name of the car park. Where there is a space i
 
 For example, the URL:
 *http://galwaycarparks.ie/satnav/Eyre_Square_Centre*
+
 Will return the Longitude and Latitude of the Eyre Square Centre car park.
 
 The data will be returned in JSON format, with the following properties:
